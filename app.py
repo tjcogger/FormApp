@@ -32,6 +32,9 @@ def init_db():
         conn.commit()
         conn.close()
 
+# Call init_db() here so it's always invoked, even under gunicorn
+init_db()
+
 @app.route('/')
 def home():
     """Render the home.html form."""
@@ -63,7 +66,5 @@ def submit_data():
     return "Thanks! Your submission has been recorded."
 
 if __name__ == '__main__':
-    # Initialize the database table if needed
-    init_db()
-    # Start the Flask development server
+    # For local development/debug
     app.run(debug=True)
