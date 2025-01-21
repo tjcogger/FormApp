@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rebekah's Form</title>
+    <title>My Form</title>
 </head>
 <body>
-    <h1>Rebekah's Commands you to Submit Your Information</h1>
+    <h1>Submit Your Info</h1>
     <form action="/submit" method="POST">
         <label>Name:</label><br>
         <input type="text" name="name" required><br><br>
 
         <label>Email:</label><br>
         <input type="email" name="email" required><br><br>
+
+        <label>Comments:</label><br>
+        <textarea name="comments"></textarea><br><br>
 
         <button type="submit">Submit</button>
     </form>
