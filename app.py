@@ -2,7 +2,7 @@
 """
 Created on Sat Jan 18 20:04:21 2025
 
-@author: Thomas
+@author: Rebekah
 """
 
 import os
