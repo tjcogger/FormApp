@@ -6,17 +6,93 @@
 <body>
     <h1>Volunteer Data Tracking</h1>
     <form action="/submit" method="POST">
-        <label>Name:</label><br>
-        <input type="text" name="name" required><br><br>
+        <!-- Volunteer First Name -->
+        <label for="volunteerFirstName">Volunteer First Name:</label><br>
+        <input 
+          type="text" 
+          id="volunteerFirstName" 
+          name="volunteer_first_name" 
+          required
+        ><br><br>
 
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
+        <!-- Volunteer Last Name -->
+        <label for="volunteerLastName">Volunteer Last Name:</label><br>
+        <input 
+          type="text" 
+          id="volunteerLastName" 
+          name="volunteer_last_name" 
+          required
+        ><br><br>
 
-        <label>Date:</label><br>
-        <input type="date" name="date" required><br><br>
+        <!-- Volunteer's Email -->
+        <label for="volunteerEmail">Volunteer's Email:</label><br>
+        <input 
+          type="email" 
+          id="volunteerEmail" 
+          name="volunteer_email" 
+          required
+        ><br><br>
 
-        <label>Comments:</label><br>
-        <textarea name="comments"></textarea><br><br>
+        <!-- Program Name (Single-Select Dropdown) -->
+        <label for="programName">Program Name:</label><br>
+        <select 
+          id="programName" 
+          name="program_name" 
+          required
+        >
+            <option value="211">211</option>
+            <option value="Collective Impact">Collective Impact</option>
+            <option value="Learn with Playgroup">Learn with Playgroup</option>
+            <option value="Little Neighborhood Libraries">Little Neighborhood Libraries</option>
+            <option value="Nonprofit Connection">Nonprofit Connection</option>
+            <option value="Student Success Program">Student Success Program</option>
+            <option value="Weber CTC">Weber CTC</option>
+            <option value="Welcome Baby">Welcome Baby</option>
+        </select>
+        <br><br>
+
+        <!-- Event/Activity Name -->
+        <label for="eventActivityName">Event/Activity Name:</label><br>
+        <input 
+          type="text" 
+          id="eventActivityName" 
+          name="event_activity_name" 
+          required
+        ><br><br>
+
+        <!-- Date Volunteered -->
+        <label for="dateVolunteered">Date Volunteered:</label><br>
+        <input 
+          type="date" 
+          id="dateVolunteered" 
+          name="date_volunteered" 
+          required
+        ><br><br>
+
+        <!-- Approximate Volunteer Hours Completed -->
+        <label for="volunteerHours">Approximate Volunteer Hours Completed:</label><br>
+        <input 
+          type="number" 
+          id="volunteerHours" 
+          name="volunteer_hours" 
+          min="0" 
+          step="0.1" 
+          required
+        ><br><br>
+
+        <!-- Comments/Feedback -->
+        <label for="commentsFeedback">Comments/Feedback:</label><br>
+        <textarea 
+          id="commentsFeedback" 
+          name="comments_feedback"
+        ></textarea><br><br>
+
+        <!-- Shout-outs / Highlights -->
+        <label for="shoutoutsHighlights">Shout-outs / Highlights:</label><br>
+        <textarea 
+          id="shoutoutsHighlights" 
+          name="shoutouts_highlights"
+        ></textarea><br><br>
 
         <button type="submit">Submit</button>
     </form>

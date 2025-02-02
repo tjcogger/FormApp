@@ -12,7 +12,6 @@ from flask import Flask, render_template, request
  
 app = Flask(__name__)
 
-# Replace this with your actual Power Automate (Flow) URL:
 FLOW_URL = "https://prod-35.westus.logic.azure.com:443/workflows/37c3bf8a61df45c4b2e4de82e1e932c5/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mjOa4NAb6ZnH_D1dvtDE3-Xb7MdPfkp0wgO926jdh3I"
 
 # Name of the local SQLite database file
