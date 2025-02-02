@@ -2,9 +2,28 @@
 <html>
 <head>
     <title>My Form</title>
+    <style>
+      /* Optional CSS to float the logo to the right and create some spacing */
+      .logo-container {
+        float: right;
+        margin-left: 20px; /* space between the form/heading and the image */
+      }
+      .logo {
+        max-width: 250px; /* scale down if needed */
+        height: auto;     /* maintain aspect ratio */
+      }
+    </style>
 </head>
 <body>
+
+    <!-- Container to hold the logo on the right side -->
+    <div class="logo-container">
+        <!-- Update "logo.png" to the actual path or file name of your .png -->
+        <img src="logo.png" alt="UWNU Logo" class="logo">
+    </div>
+
     <h1>Volunteer Data Tracking</h1>
+
     <form action="/submit" method="POST">
         <!-- Volunteer First Name -->
         <label for="volunteerFirstName">Volunteer First Name:</label><br>
