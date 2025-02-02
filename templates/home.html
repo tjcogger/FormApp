@@ -2,25 +2,35 @@
 <html>
 <head>
     <title>My Form</title>
+    
+    <!-- Link to Roboto from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" 
+      rel="stylesheet"
+    >
+
     <style>
-      /* Optional CSS to float the logo to the right and create some spacing */
+      /* Apply Roboto to the entire body and all form controls */
+      body, input, select, textarea, button, label {
+        font-family: 'Roboto', sans-serif;
+      }
+      
+      /* Optional styling if you still want the logo to float, etc. */
       .logo-container {
         float: right;
-        margin-left: 2px; /* space between the form/heading and the image */
+        margin-right: 50px; 
       }
       .logo {
-        max-width: 250px; /* scale down if needed */
-        height: auto;     /* maintain aspect ratio */
-	display: block;
-    	margin: 0 auto;
+        max-width: 250px;
+        height: auto;
       }
     </style>
 </head>
 <body>
-
-    <!-- Container to hold the logo on the right side -->
     <div class="logo-container">
-        <img src="{{ url_for('static', filename='logo.PNG') }}" alt="UWNU Logo">
+        <img src="{{ url_for('static', filename='logo.PNG') }}" alt="UWNU Logo" class="logo">
     </div>
 
     <h1>Volunteer Data Tracking</h1>
