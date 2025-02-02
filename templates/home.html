@@ -33,7 +33,7 @@
           required
         ><br><br>
 
-        <!-- Program Name (Single-Select Dropdown) -->
+        <!-- Program Name (Dropdown) -->
         <label for="programName">Program Name:</label><br>
         <select 
           id="programName" 
@@ -82,16 +82,35 @@
 
         <!-- Comments/Feedback -->
         <label for="commentsFeedback">Comments/Feedback:</label><br>
+        <p style="font-style: italic;">
+            UWNU is committed to creating meaningful change in our communities,
+            and we couldn't do it without you — our amazing volunteers. Your
+            positive experience matters to us!<br><br>
+            Is there anything you would like to share with us?
+            Are there any suggestions you have or improvements
+            we can make?
+        </p>
         <textarea 
           id="commentsFeedback" 
           name="comments_feedback"
+          rows="5" 
+          cols="50"
+          placeholder="Feel free to share any feedback here..."
         ></textarea><br><br>
 
         <!-- Shout-outs / Highlights -->
         <label for="shoutoutsHighlights">Shout-outs / Highlights:</label><br>
+        <p style="font-style: italic;">
+            We'd love to hear about your experience! Please share any 
+            <b>memorable moments</b>, <b>accomplishments</b>, or <b>highlights</b> 
+            from your time volunteering.
+        </p>
         <textarea 
           id="shoutoutsHighlights" 
           name="shoutouts_highlights"
+          rows="5" 
+          cols="50"
+          placeholder="Feel free to share any highlights here..."
         ></textarea><br><br>
 
         <button type="submit">Submit</button>
