@@ -77,7 +77,7 @@ def submit_data():
     comments_feedback      = request.form.get('comments_feedback')
     shoutouts_highlights   = request.form.get('shoutouts_highlights')
 
-    # 2) Basic validation (just as an example—adjust to your needs)
+    # 2) Basic validation 
     if not volunteer_first_name or not volunteer_last_name or not volunteer_email:
         return "Volunteer first name, last name, and email are required fields!", 400
 
@@ -114,7 +114,7 @@ def submit_data():
     conn.commit()
     conn.close()
 
-    # 4) Send the same data to Power Automate (Flow) for SharePoint
+    # 4) Send the same data to Power Automate (Flow) for SharePoint blahfv
     payload = {
         "volunteer_first_name":  volunteer_first_name,
         "volunteer_last_name":   volunteer_last_name,
