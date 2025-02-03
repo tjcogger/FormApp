@@ -99,7 +99,7 @@ def submit_data():
             comments_feedback,
             shoutouts_highlights
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) 
     ''', (
         volunteer_first_name,
         volunteer_last_name,
