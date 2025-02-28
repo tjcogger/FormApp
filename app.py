@@ -144,7 +144,7 @@ def submit_data():
 if __name__ == '__main__':
     # For local development/debug
     app.run(debug=True)
-=======
+#=======
 # -*- coding: utf-8 -*-
 """
 Created on Sat Jan 18 20:04:21 2025
@@ -290,4 +290,4 @@ def submit_data():
 if __name__ == '__main__':
     # For local development/debug
     app.run(debug=True)
->>>>>>> c5f020e7619d728379c9bdf7c8d60eb32ae0b064
+#>>>>>>> c5f020e7619d728379c9bdf7c8d60eb32ae0b064
