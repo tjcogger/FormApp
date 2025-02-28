@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+#<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 """
 Created on Sat Jan 18 20:04:21 2025
