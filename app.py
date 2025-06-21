@@ -124,7 +124,7 @@ def submit_data():
         )
 
     # --- choose the right Flow URL ---
-    target_url = FLOW_URL_211 if program_name == "211" else FLOW_URL_MAIN
+    target_url = FLOW_URL_211 #if program_name == "211" else FLOW_URL_MAIN
 
     payload = {
         "volunteer_first_name": volunteer_first_name,
