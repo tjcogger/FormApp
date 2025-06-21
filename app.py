@@ -12,8 +12,6 @@ app = Flask(__name__)
 
 # ----------------------------------------------------------------------
 # 1) Power Automate webhook URLs
-#    ───────────────────────────
-#    Store them as env-vars (set in your host or .env); fallback to literal
 # ----------------------------------------------------------------------
 FLOW_URL_MAIN = os.getenv(
     "FLOW_URL_MAIN",
@@ -79,12 +77,15 @@ def submit_data():
     volunteer_first_name = request.form.get("volunteer_first_name", "").strip()
     volunteer_last_name = request.form.get("volunteer_last_name", "").strip()
     volunteer_email = request.form.get("volunteer_email", "").strip()
-    program_name = request.form.get("program_name", "").strip()
+    program_name_raw = request.form.get("program_name", "")
     event_activity_name = request.form.get("event_activity_name", "").strip()
     date_volunteered = request.form.get("date_volunteered", "").strip()
     volunteer_hours = request.form.get("volunteer_hours", "").strip()
     comments_feedback = request.form.get("comments_feedback", "").strip()
     shoutouts_highlights = request.form.get("shoutouts_highlights", "").strip()
+
+    # --- normalise program name for routing ---
+    program_name = str(program_name_raw).strip().lower()
 
     # --- basic validation ---
     required = [
@@ -114,7 +115,7 @@ def submit_data():
                 volunteer_first_name,
                 volunteer_last_name,
                 volunteer_email,
-                program_name,
+                program_name_raw,              # keep original case in DB
                 event_activity_name,
                 date_volunteered,
                 volunteer_hours,
@@ -124,13 +125,16 @@ def submit_data():
         )
 
     # --- choose the right Flow URL ---
-    target_url = FLOW_URL_211 #if program_name == "211" else FLOW_URL_MAIN
+    if program_name == "211" or program_name.startswith("211 "):
+        target_url = FLOW_URL_211
+    else:
+        target_url = FLOW_URL_MAIN
 
     payload = {
         "volunteer_first_name": volunteer_first_name,
         "volunteer_last_name": volunteer_last_name,
         "volunteer_email": volunteer_email,
-        "program_name": program_name,
+        "program_name": program_name_raw,      # send original string to Flow
         "event_activity_name": event_activity_name,
         "date_volunteered": date_volunteered,
         "volunteer_hours": volunteer_hours,
