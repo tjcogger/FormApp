@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Volunteer submission form → SQLite backup → SharePoint via Power Automate
-Identical to the original script except FLOW_URL now targets the second flow.
 """
 
 import os
@@ -12,16 +11,24 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # ----------------------------------------------------------------------
-# Power Automate webhook URL (SECOND flow)
+# 1) Power Automate webhook URLs
 # ----------------------------------------------------------------------
-FLOW_URL = (
+FLOW_URL_MAIN = os.getenv(
+    "FLOW_URL_MAIN",
+    "https://prod-35.westus.logic.azure.com:443/workflows/37c3bf8a61df45c4b2e4de82e1e932c5/"
+    "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
+    "sv=1.0&sig=mjOa4NAb6ZnH_D1dvtDE3-Xb7MdPfkp0wgO926jdh3I",
+)
+
+FLOW_URL_211 = os.getenv(
+    "FLOW_URL_211",
     "https://prod-143.westus.logic.azure.com:443/workflows/7a0e4f601d6e4dfaa1423b3d921746ef/"
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
-    "sv=1.0&sig=nZJo1sU2uucPTPgQdCiICxOcbDdQyzMO2LG9N22feqY"
+    "sv=1.0&sig=nZJo1sU2uucPTPgQdCiICxOcbDdQyzMO2LG9N22feqY",
 )
 
 # ----------------------------------------------------------------------
-# Local SQLite settings
+# 2) Local SQLite settings
 # ----------------------------------------------------------------------
 DB_FILE = "submissions.db"
 
@@ -55,7 +62,7 @@ def init_db() -> None:
 init_db()
 
 # ----------------------------------------------------------------------
-# Routes
+# 3) Routes
 # ----------------------------------------------------------------------
 @app.route("/")
 def home():
@@ -66,25 +73,34 @@ def home():
 @app.route("/submit", methods=["POST"])
 def submit_data():
     """Validate form, persist locally, then forward to Power Automate."""
+    # --- pull fields from request ---
     volunteer_first_name = request.form.get("volunteer_first_name", "").strip()
-    volunteer_last_name  = request.form.get("volunteer_last_name", "").strip()
-    volunteer_email      = request.form.get("volunteer_email", "").strip()
-    program_name         = request.form.get("program_name", "").strip()
-    event_activity_name  = request.form.get("event_activity_name", "").strip()
-    date_volunteered     = request.form.get("date_volunteered", "").strip()
-    volunteer_hours      = request.form.get("volunteer_hours", "").strip()
-    comments_feedback    = request.form.get("comments_feedback", "").strip()
+    volunteer_last_name = request.form.get("volunteer_last_name", "").strip()
+    volunteer_email = request.form.get("volunteer_email", "").strip()
+    program_name_raw = request.form.get("program_name", "")
+    event_activity_name = request.form.get("event_activity_name", "").strip()
+    date_volunteered = request.form.get("date_volunteered", "").strip()
+    volunteer_hours = request.form.get("volunteer_hours", "").strip()
+    comments_feedback = request.form.get("comments_feedback", "").strip()
     shoutouts_highlights = request.form.get("shoutouts_highlights", "").strip()
 
-    # Basic validation
+    # --- normalise program name for routing ---
+    program_name = str(program_name_raw).strip().lower()
+
+    # --- basic validation ---
     required = [
-        volunteer_first_name, volunteer_last_name, volunteer_email,
-        program_name, event_activity_name, date_volunteered, volunteer_hours,
+        volunteer_first_name,
+        volunteer_last_name,
+        volunteer_email,
+        program_name,
+        event_activity_name,
+        date_volunteered,
+        volunteer_hours,
     ]
     if not all(required):
         return "Missing required fields.", 400
 
-    # Save to SQLite
+    # --- save to SQLite ---
     with sqlite3.connect(DB_FILE) as conn:
         conn.execute(
             """
@@ -96,27 +112,38 @@ def submit_data():
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
-                volunteer_first_name, volunteer_last_name, volunteer_email,
-                program_name, event_activity_name, date_volunteered,
-                volunteer_hours, comments_feedback, shoutouts_highlights,
+                volunteer_first_name,
+                volunteer_last_name,
+                volunteer_email,
+                program_name_raw,              # keep original case in DB
+                event_activity_name,
+                date_volunteered,
+                volunteer_hours,
+                comments_feedback,
+                shoutouts_highlights,
             ),
         )
 
-    # Forward to Power Automate
+    # --- choose the right Flow URL ---
+    if program_name == "211" or program_name.startswith("211 "):
+        target_url = FLOW_URL_211
+    else:
+        target_url = FLOW_URL_MAIN
+
     payload = {
         "volunteer_first_name": volunteer_first_name,
-        "volunteer_last_name":  volunteer_last_name,
-        "volunteer_email":      volunteer_email,
-        "program_name":         program_name,
-        "event_activity_name":  event_activity_name,
-        "date_volunteered":     date_volunteered,
-        "volunteer_hours":      volunteer_hours,
-        "comments_feedback":    comments_feedback,
+        "volunteer_last_name": volunteer_last_name,
+        "volunteer_email": volunteer_email,
+        "program_name": program_name_raw,      # send original string to Flow
+        "event_activity_name": event_activity_name,
+        "date_volunteered": date_volunteered,
+        "volunteer_hours": volunteer_hours,
+        "comments_feedback": comments_feedback,
         "shoutouts_highlights": shoutouts_highlights,
     }
 
     try:
-        response = requests.post(FLOW_URL, json=payload, timeout=10)
+        response = requests.post(target_url, json=payload, timeout=10)
         response.raise_for_status()
     except requests.exceptions.RequestException as exc:
         print("Error posting to Power Automate:", exc)
