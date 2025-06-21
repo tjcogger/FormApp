@@ -97,7 +97,7 @@ PROGRAM_FLOW_MAP = {
     "nonprofit connection": FLOW_URL_NONPROFIT_CONNECTION,
     "student success program": FLOW_URL_STUDENT_SUCCESS,
     "weber ctc": FLOW_URL_WEBER_CTC,
-    "welcome baby": FLOW_URL_WELCOME_BABY,
+    "Welcome Baby": FLOW_URL_WELCOME_BABY,
     "dyad": FLOW_URL_DYAD,
     "general united way": FLOW_URL_GENERAL_UW,
 }
