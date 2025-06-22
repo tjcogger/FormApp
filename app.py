@@ -15,6 +15,11 @@ app = Flask(__name__)
 # ──────────────────────────────────────────────────────────────────────
 # 1)  Power Automate web-hook URLs (env vars override literals)
 # ──────────────────────────────────────────────────────────────────────
+# -*- coding: utf-8 -*-
+
+# ──────────────────────────────────────────────────────────────────────
+# 1)  Power Automate web-hook URLs  (env-vars override literals)
+# ──────────────────────────────────────────────────────────────────────
 FLOW_URL_MAIN = os.getenv(
     "FLOW_URL_MAIN",
     "https://prod-35.westus.logic.azure.com:443/workflows/37c3bf8a61df45c4b2e4de82e1e932c5/"
@@ -28,60 +33,63 @@ FLOW_URL_211 = os.getenv(
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
     "sv=1.0&sig=nZJo1sU2uucPTPgQdCiICxOcbDdQyzMO2LG9N22feqY",
 )
+
+# ▼▼ — NEW URLs you provided — ▼▼
 FLOW_URL_COLLECTIVE_IMPACT = os.getenv(
     "FLOW_URL_COLLECTIVE_IMPACT",
-    "https://prod-70.westus.logic.azure.com:443/workflows/151a3f5b122048a9bfd33400666dd327/"
+    "https://prod-88.westus.logic.azure.com:443/workflows/fc073cd921ed4a45a11df5a386f82cee/"
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
-    "sv=1.0&sig=mzzDEAnuAkjljm7j2uFnJLVz7J-849pwM47o7M1aD2o",
+    "sv=1.0&sig=qlVPphes1g1gMwA7s-SGmtc_QuolucdgQG6a9tIQiaU",
 )
 FLOW_URL_LEARN_WITH_PLAYGROUP = os.getenv(
     "FLOW_URL_LEARN_WITH_PLAYGROUP",
-    "https://prod-139.westus.logic.azure.com:443/workflows/92f37cb44a8e464983226f2557e48ee5/"
+    "https://prod-93.westus.logic.azure.com:443/workflows/a6aad79b686345a8b3f8bd8782b4f337/"
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
-    "sv=1.0&sig=lj5noYv7_T5zbs7CYGkzAnQyTpheGPpfno7jk0MmL0g",
+    "sv=1.0&sig=Xj8gF0cQDCiWxncDOZJCY7zqhHRI4oVRVOvaETt0ePk",
 )
 FLOW_URL_LITTLE_LIBRARIES = os.getenv(
     "FLOW_URL_LITTLE_LIBRARIES",
-    "https://prod-129.westus.logic.azure.com:443/workflows/f6e9aa49d6704ef2864b13bf3487d28b/"
+    "https://prod-96.westus.logic.azure.com:443/workflows/d108c90980684890a6949af372f533cc/"
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
-    "sv=1.0&sig=gEQ_XpD-_z_caQuiZFJghbZwzKEvG_ZH2_1pJ02HCMQ",
+    "sv=1.0&sig=IOOdXQ07nIuE0hzEuk5t6f1x1O5pliWruNXLwGzoqW4",
 )
 FLOW_URL_NONPROFIT_CONNECTION = os.getenv(
     "FLOW_URL_NONPROFIT_CONNECTION",
-    "https://prod-73.westus.logic.azure.com:443/workflows/ad077a2d6391415b82a2f6b3aacee40c/"
+    "https://prod-117.westus.logic.azure.com:443/workflows/d91ecd30269b451dbdabc813155df949/"
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
-    "sv=1.0&sig=soKi_3FPjRoM6op0CMLXdG4uYgN8irEFnow88wg-T3k",
+    "sv=1.0&sig=_Vogaz2DaQ722a_MfnV6ZIhHkgJIw7IDIxkF7q26tXY",
 )
 FLOW_URL_STUDENT_SUCCESS = os.getenv(
     "FLOW_URL_STUDENT_SUCCESS",
-    "https://prod-186.westus.logic.azure.com:443/workflows/527df460eb6b4e309a8eed5f64db4977/"
+    "https://prod-58.westus.logic.azure.com:443/workflows/c77785cb0fa54209acfef52a8e2cfb27/"
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
-    "sv=1.0&sig=-IeE6_9IrUjAeuowTrAcvI6M5WwY-xsaZO0QiI7_IdM",
+    "sv=1.0&sig=Gh9sp88xZWxrpe4qWBhyEIdckQqF34JTKliHiiyENQs",
 )
 FLOW_URL_WEBER_CTC = os.getenv(
     "FLOW_URL_WEBER_CTC",
-    "https://prod-13.westus.logic.azure.com:443/workflows/4747d0390a0c4040b979b9953fd7097c/"
+    "https://prod-185.westus.logic.azure.com:443/workflows/23ddbcdb47c94e77893973cc8cceb08c/"
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
-    "sv=1.0&sig=FHLXRDejJfF6VIbMomGIMqK2fKcgJ4lDAXXkJdRkwLo",
+    "sv=1.0&sig=Y9CpXFG7vDr3Nb7a_CHhp7aTsam13fJMJTveVO92TIA",
 )
 FLOW_URL_WELCOME_BABY = os.getenv(
     "FLOW_URL_WELCOME_BABY",
-    "https://prod-73.westus.logic.azure.com:443/workflows/334530580fbe47da804ab9967f024d75/"
+    "https://prod-100.westus.logic.azure.com:443/workflows/2300d439983f40ccaef621dd012f982b/"
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
-    "sv=1.0&sig=l5ZkTYUT0u8Lp23Qx_UF8b3-eRhwLChvOZmkSltjCZg",
+    "sv=1.0&sig=b5auB1lxGENLy-odC8Cxuil4XrXnHC-y7eajSgTwSvs",
 )
 FLOW_URL_DYAD = os.getenv(
     "FLOW_URL_DYAD",
-    "https://prod-13.westus.logic.azure.com:443/workflows/184291dc186c4737ab975a3f5a3e004e/"
+    "https://prod-153.westus.logic.azure.com:443/workflows/7e66478dcdba4d728005d3a6139975eb/"
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
-    "sv=1.0&sig=t6Yw6dBBOsPnSYhVcQNmsQPaIo-Di_iOr1YdcTfsM_c",
+    "sv=1.0&sig=2jSCZgv371CJjMworyXrnaKsK9jAN8ZxbiT__J2YuqU",
 )
 FLOW_URL_GENERAL_UW = os.getenv(
     "FLOW_URL_GENERAL_UW",
-    "https://prod-167.westus.logic.azure.com:443/workflows/1564327b17d44fadac443422d22a612e/"
+    "https://prod-80.westus.logic.azure.com:443/workflows/ab041a615bc94e5b9175d3bbaf45dea5/"
     "triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&"
-    "sv=1.0&sig=coYHDUvPEIIplQnVLE8zdfVpL-W8xMM-09IONv9juR8",
+    "sv=1.0&sig=EwZqtD99dV-5rlh6wpidvLaO2SjGdI2yhbzFo009oZc",
 )
+# ▲▲ — NEW URLs end here — ▲▲
 
 PROGRAM_TO_URL = {
     "211": FLOW_URL_211,
@@ -95,6 +103,9 @@ PROGRAM_TO_URL = {
     "dyad": FLOW_URL_DYAD,
     "general united way": FLOW_URL_GENERAL_UW,
 }
+
+# ── rest of the file stays unchanged ──────────────────────────────────
+
 
 # ──────────────────────────────────────────────────────────────────────
 # 2)  Local SQLite
