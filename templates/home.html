@@ -155,9 +155,7 @@
           >
           <label for="liabilityWaiver">
             I have read and agree to the
-            <a href="/static/liability-waiver.pdf" target="_blank" rel="noopener">
-              Liability Waiver
-            </a>.
+            <a href="#" id="showWaiver" rel="noopener">Liability Waiver</a>.
           </label>
         </div>
 
@@ -171,6 +169,64 @@
         submit.disabled = true;
         waiver.addEventListener('change', () => {
           submit.disabled = !waiver.checked;
+        });
+      })();
+    </script>
+
+    <!-- Waiver Modal (appended) -->
+    <div id="waiverModal" style="
+         display:none;
+         position:fixed;
+         top:0; left:0;
+         width:100%; height:100%;
+         background:rgba(0,0,0,0.6);
+         overflow:auto;
+         padding:2rem;
+       ">
+      <div style="
+           background:#fff;
+           margin:2rem auto;
+           padding:2rem;
+           max-width:800px;
+           position:relative;
+           border-radius:4px;
+         ">
+        <button id="closeWaiver" style="
+            position:absolute;
+            top:1rem; right:1rem;
+            background:transparent;
+            border:none;
+            font-size:1.2rem;
+            cursor:pointer;
+          ">✕ Close</button>
+
+        <h2>Liability Release and Waiver and Photo Authorization</h2>
+        <p>Thanks for volunteering with United Way of Northern Utah (“UWNU”)! Every volunteer over the age of 18 (AND a parent/legal guardian of any volunteer under the age of 18) must sign this form before volunteering. This agreement will remain in force unless the signer notifies UWNU to the contrary in writing.</p>
+        <p><strong>PARTIES:</strong> This Liability Release and Waiver and Photo Authorization (“Release”) is executed by (“I” or “me”) in favor of UWNU, its affiliates, agency partners, activity organizers, activity sponsors, and activity supervisors, the respective successors and assigns of each, and the respective trustees/directors, officers, employees, volunteers, representatives, and agents of each of the foregoing (collectively, “UWNU”).</p>
+        <!-- … paste all remaining waiver paragraphs here … -->
+        <p>If you have any questions, please call UWNU at 801 399 5584.</p>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const modal    = document.getElementById('waiverModal');
+        const showLink = document.getElementById('showWaiver');
+        const closeBtn = document.getElementById('closeWaiver');
+
+        showLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function() {
+          modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            modal.style.display = 'none';
+          }
         });
       })();
     </script>
