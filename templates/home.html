@@ -2,19 +2,30 @@
 <html>
 <head>
     <title>My Form</title>
-
-    <!-- Roboto font -->
+    
+    <!-- Link to Roboto from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" 
+      rel="stylesheet"
+    >
 
     <style>
-      body, input, select, textarea, button, label { font-family: 'Roboto', sans-serif; }
-      .logo-container { float: right; margin-right: 50px; }
-      .logo           { max-width: 500px; height: auto; }
-
-      /* NEW: small helper so the waiver block isn’t jammed against other controls */
-      .waiver { margin: 1.5rem 0; }
+      /* Apply Roboto to the entire body and all form controls */
+      body, input, select, textarea, button, label {
+        font-family: 'Roboto', sans-serif;
+      }
+      
+      /* Optional styling if you still want the logo to float, etc. */
+      .logo-container {
+        float: right;
+        margin-right: 50px; 
+      }
+      .logo {
+        max-width: 500px;
+        height: auto;
+      }
     </style>
 </head>
 <body>
@@ -24,16 +35,8 @@
 
     <h1>Volunteer Data Tracking</h1>
 
-    <form action="/submit" method="POST" id="volunteerForm">
-        <!-- -------------------------------------------------------- -->
-        <!--                    (existing fields)                    -->
-        <!-- -------------------------------------------------------- -->
-
-        <!-- Volunteer First Name -->
-        <label for="volunteerFirstName">Volunteer First Name:</label><br>
-        <input type="text" id="volunteerFirstName" name="volunteer_first_name" required><br><br>
-
-        <!-- … the rest of your current inputs unchanged … -->
+    <form action="/submit" method="POST">
+        <!-- … all your existing fields here … -->
 
         <!-- Shout-outs / Highlights -->
         <label for="shoutoutsHighlights">Shout-outs / Highlights:</label><br>
@@ -42,17 +45,22 @@
             <b>memorable moments</b>, <b>accomplishments</b>, or <b>highlights</b> 
             from your time volunteering.
         </p>
-        <textarea id="shoutoutsHighlights" name="shoutouts_highlights" rows="5" cols="50"
-                  placeholder="Feel free to share any highlights here..."></textarea><br><br>
+        <textarea 
+          id="shoutoutsHighlights" 
+          name="shoutouts_highlights"
+          rows="5" 
+          cols="50"
+          placeholder="Feel free to share any highlights here..."
+        ></textarea><br><br>
 
-        <!-- ======================================================== -->
-        <!--                 ✱  LIABILITY  WAIVER  ✱                  -->
-        <!-- ======================================================== -->
-        <div class="waiver">
-          <input type="checkbox"
-                 id="liabilityWaiver"
-                 name="liability_accepted"
-                 required>
+        <!-- ◀︎ Insert liability waiver checkbox here ▶︎ -->
+        <div style="margin:1.5rem 0;">
+          <input 
+            type="checkbox"
+            id="liabilityWaiver"
+            name="liability_accepted"
+            required
+          >
           <label for="liabilityWaiver">
             I have read and agree to the
             <a href="/static/liability-waiver.pdf" target="_blank" rel="noopener">
@@ -61,23 +69,19 @@
           </label>
         </div>
 
-        <!-- Submit button -->
+        <!-- existing Submit button (only once!) -->
         <button type="submit" id="submitBtn">Submit</button>
     </form>
 
-    <!-- ========================================================== -->
-    <!--        Enable Submit only after waiver is checked          -->
-    <!-- ========================================================== -->
+    
     <script>
       (function () {
-        const waiverBox = document.getElementById('liabilityWaiver');
-        const submitBtn = document.getElementById('submitBtn');
-
-        // Block submission until the user accepts the waiver
-        submitBtn.disabled = true;
-
-        waiverBox.addEventListener('change', () => {
-          submitBtn.disabled = !waiverBox.checked;
+        const waiver = document.getElementById('liabilityWaiver');
+        const submit = document.getElementById('submitBtn');
+        // Disable submit until waiver is checked
+        submit.disabled = true;
+        waiver.addEventListener('change', () => {
+          submit.disabled = !waiver.checked;
         });
       })();
     </script>
