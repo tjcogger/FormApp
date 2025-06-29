@@ -36,7 +36,99 @@
     <h1>Volunteer Data Tracking</h1>
 
     <form action="/submit" method="POST">
-        <!-- … all your existing fields here … -->
+        <!-- Volunteer First Name -->
+        <label for="volunteerFirstName">Volunteer First Name:</label><br>
+        <input 
+          type="text" 
+          id="volunteerFirstName" 
+          name="volunteer_first_name" 
+          required
+        ><br><br>
+
+        <!-- Volunteer Last Name -->
+        <label for="volunteerLastName">Volunteer Last Name:</label><br>
+        <input 
+          type="text" 
+          id="volunteerLastName" 
+          name="volunteer_last_name" 
+          required
+        ><br><br>
+
+        <!-- Volunteer's Email -->
+        <label for="volunteerEmail">Volunteer's Email:</label><br>
+        <input 
+          type="email" 
+          id="volunteerEmail" 
+          name="volunteer_email" 
+          required
+        ><br><br>
+
+        <!-- Program Name (Dropdown) -->
+        <label for="programName">Program Name:</label><br>
+        <select 
+          id="programName" 
+          name="program_name" 
+          required
+        >
+            <option value="211">211</option>
+            <option value="Collective Impact">Collective Impact</option>
+            <option value="Learn with Playgroup">Learn with Playgroup</option>
+            <option value="Little Neighborhood Libraries">Little Neighborhood Libraries</option>
+            <option value="Nonprofit Connection">Nonprofit Connection</option>
+            <option value="Student Success Program">Student Success Program</option>
+            <option value="Weber CTC">Weber CTC</option>
+            <option value="Welcome Baby">Welcome Baby</option>
+            <option value="DYAD">DYAD</option>
+            <option value="General United Way">General United Way</option> 
+        </select>
+        <br><br>
+
+        <!-- Event/Activity Name -->
+        <label for="eventActivityName">Event/Activity Name:</label><br>
+        <input 
+          type="text" 
+          id="eventActivityName" 
+          name="event_activity_name" 
+          required
+        ><br><br>
+
+        <!-- Date Volunteered -->
+        <label for="dateVolunteered">Date Volunteered:</label><br>
+        <input 
+          type="date" 
+          id="dateVolunteered" 
+          name="date_volunteered" 
+          required
+        ><br><br>
+
+        <!-- Approximate Volunteer Hours Completed -->
+        <label for="volunteerHours">Approximate Volunteer Hours Completed:</label><br>
+        <input 
+          type="number" 
+          id="volunteerHours" 
+          name="volunteer_hours" 
+          min="0" 
+          step="0.1" 
+          required
+        ><br><br>
+
+        <!-- Comments/Feedback -->
+        <label for="commentsFeedback">Comments/Feedback:</label><br>
+        <p style="font-style: italic;">
+            UWNU is committed to creating meaningful change in our communities,
+            and we couldn't do it without you — our amazing volunteers. Your
+            positive experience matters to us!<br><br>
+            Is there anything you would like to share with us?
+            Are there any suggestions you have or improvements
+            we can make? 
+        </p>
+        <textarea 
+          id="commentsFeedback" 
+          name="comments_feedback"
+          rows="5" 
+          cols="50"
+          placeholder="Feel free to share any feedback here..."
+        ></textarea><br><br>
 
         <!-- Shout-outs / Highlights -->
         <label for="shoutoutsHighlights">Shout-outs / Highlights:</label><br>
@@ -53,12 +145,12 @@
           placeholder="Feel free to share any highlights here..."
         ></textarea><br><br>
 
-        <!-- ◀︎ Insert liability waiver checkbox here ▶︎ -->
+        <!-- Liability Waiver checkbox -->
         <div style="margin:1.5rem 0;">
           <input 
-            type="checkbox"
-            id="liabilityWaiver"
-            name="liability_accepted"
+            type="checkbox" 
+            id="liabilityWaiver" 
+            name="liability_accepted" 
             required
           >
           <label for="liabilityWaiver">
@@ -69,16 +161,13 @@
           </label>
         </div>
 
-        <!-- existing Submit button (only once!) -->
-        <button type="submit" id="submitBtn">Submit</button>
+        <button type="submit">Submit</button>
     </form>
 
-    
     <script>
-      (function () {
+      (function() {
         const waiver = document.getElementById('liabilityWaiver');
-        const submit = document.getElementById('submitBtn');
-        // Disable submit until waiver is checked
+        const submit = document.querySelector('form button[type="submit"]');
         submit.disabled = true;
         waiver.addEventListener('change', () => {
           submit.disabled = !waiver.checked;
