@@ -29,35 +29,35 @@ FLOW_URL_MAIN = os.getenv(
 PROGRAM_TO_URL = {
     "211": os.getenv(
         "FLOW_URL_211",
-        "https://prod-143.westus.logic.azure.com:443/workflows/7a0e4f601d6e4dfaa1423b3d921746ef/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=nZJo1sU2uucPTPgQdCiICxOcbDdQyzMO2LG9N22feqY",
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/31/workflows/7a0e4f601d6e4dfaa1423b3d921746ef/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=wD5cXJLz03Bsvtb8uw6CWlkE2eZ5N1derO1JlFfW5a0",
     ),
     "collective impact": os.getenv(
         "FLOW_URL_COLLECTIVE_IMPACT",
-        "https://prod-88.westus.logic.azure.com:443/workflows/fc073cd921ed4a45a11df5a386f82cee/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=qlVPphes1g1gMwA7s-SGmtc_QuolucdgQG6a9tIQiaU",
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/18/workflows/fc073cd921ed4a45a11df5a386f82cee/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=S6xdzFWdAwsxWHXToO-P2w6ritbII5wnekC61h9yoNU,
     ),
     "learn with playgroup": os.getenv(
         "FLOW_URL_LEARN_WITH_PLAYGROUP",
-        "https://prod-93.westus.logic.azure.com:443/workflows/a6aad79b686345a8b3f8bd8782b4f337/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Xj8gF0cQDCiWxncDOZJCY7zqhHRI4oVRVOvaETt0ePk",
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/05/workflows/a6aad79b686345a8b3f8bd8782b4f337/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1oNOzrV-0W4LbviVdtFX9ntL8H1-6_Eo9QFFX5qv1dk",
     ),
     "little neighborhood libraries": os.getenv(
         "FLOW_URL_LITTLE_LIBRARIES",
-        "https://prod-96.westus.logic.azure.com:443/workflows/d108c90980684890a6949af372f533cc/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=IOOdXQ07nIuE0hzEuk5t6f1x1O5pliWruNXLwGzoqW4",
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/11/workflows/d108c90980684890a6949af372f533cc/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=pj4ga7etya2uSEFPHFqZsenR6VE7cus18TxeJkkQKB0",
     ),
     "nonprofit connection": os.getenv(
         "FLOW_URL_NONPROFIT_CONNECTION",
-        "https://prod-117.westus.logic.azure.com:443/workflows/d91ecd30269b451dbdabc813155df949/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_Vogaz2DaQ722a_MfnV6ZIhHkgJIw7IDIxkF7q26tXY",
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/22/workflows/d91ecd30269b451dbdabc813155df949/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=e76Rv8eqIM8AHGxNjlln_TW89GPxn_7nRS0VnwfgsBQ",
     ),
     "student success program": os.getenv(
         "FLOW_URL_STUDENT_SUCCESS",
-        "https://prod-58.westus.logic.azure.com:443/workflows/c77785cb0fa54209acfef52a8e2cfb27/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Gh9sp88xZWxrpe4qWBhyEIdckQqF34JTKliHiiyENQs",
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/01/workflows/c77785cb0fa54209acfef52a8e2cfb27/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=qETqd1a56up4y7xNWIPXcCd48Q3d2RrpdKKnchtK90g",
     ),
     "weber ctc": os.getenv(
         "FLOW_URL_WEBER_CTC",
-        "https://prod-185.westus.logic.azure.com:443/workflows/23ddbcdb47c94e77893973cc8cceb08c/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Y9CpXFG7vDr3Nb7a_CHhp7aTsam13fJMJTveVO92TIA",
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/14/workflows/23ddbcdb47c94e77893973cc8cceb08c/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=IVLdRZckZPMPcG_Pj0jHjmeNeNZoyrCPNARd76Cgit0",
     ),
     "welcome baby": os.getenv(
         "FLOW_URL_WELCOME_BABY",
-        "https://prod-100.westus.logic.azure.com:443/workflows/2300d439983f40ccaef621dd012f982b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=b5auB1lxGENLy-odC8Cxuil4XrXnHC-y7eajSgTwSvs",
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/2300d439983f40ccaef621dd012f982b/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7gmFFPCZwbtERDqf0RoFJvtVzXeuFXSm8swuA93Ifmg",
     ),
     "dyad": os.getenv(
         "FLOW_URL_DYAD",
@@ -65,7 +65,7 @@ PROGRAM_TO_URL = {
     ),
     "general united way": os.getenv(
         "FLOW_URL_GENERAL_UW",
-        "https://prod-80.westus.logic.azure.com:443/workflows/ab041a615bc94e5b9175d3bbaf45dea5/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=EwZqtD99dV-5rlh6wpidvLaO2SjGdI2yhbzFo009oZc",
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/31/workflows/ab041a615bc94e5b9175d3bbaf45dea5/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PYRKfCixc3hFOENljP4ITcBgJK-0EkroeucSWUudzlA",
     ),
 }
 # ── rest of the file stays unchanged ──────────────────────────────────
