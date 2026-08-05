@@ -61,7 +61,7 @@ PROGRAM_TO_URL = {
     ),
     "dyad": os.getenv(
         "FLOW_URL_DYAD",
-        "https://prod-153.westus.logic.azure.com:443/workflows/7e66478dcdba4d728005d3a6139975eb/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2jSCZgv371CJjMworyXrnaKsK9jAN8ZxbiT__J2YuqU",
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/21/workflows/7e66478dcdba4d728005d3a6139975eb/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=FkQSusRHti2KX8ehwEx_0nlBmcTC_X1_HocdFeJa4E8",
     ),
     "general united way": os.getenv(
         "FLOW_URL_GENERAL_UW",
