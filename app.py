@@ -33,7 +33,7 @@ PROGRAM_TO_URL = {
     ),
     "collective impact": os.getenv(
         "FLOW_URL_COLLECTIVE_IMPACT",
-        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/18/workflows/fc073cd921ed4a45a11df5a386f82cee/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=S6xdzFWdAwsxWHXToO-P2w6ritbII5wnekC61h9yoNU,
+        "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/18/workflows/fc073cd921ed4a45a11df5a386f82cee/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=S6xdzFWdAwsxWHXToO-P2w6ritbII5wnekC61h9yoNU",
     ),
     "learn with playgroup": os.getenv(
         "FLOW_URL_LEARN_WITH_PLAYGROUP",
