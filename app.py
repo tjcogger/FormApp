@@ -23,7 +23,7 @@ app = Flask(__name__)
 
 FLOW_URL_MAIN = os.getenv(
     "FLOW_URL_MAIN",
-    "https://prod-35.westus.logic.azure.com:443/workflows/37c3bf8a61df45c4b2e4de82e1e932c5/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mjOa4NAb6ZnH_D1dvtDE3-Xb7MdPfkp0wgO926jdh3I",
+    "https://default55c9796cbfbf49fd8847d22bc37290.81.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/08/workflows/37c3bf8a61df45c4b2e4de82e1e932c5/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Y2ClIjnKPZDb9Dr5qfX7mSrW_e7IokFMUMI7QKY008o",
 )
 
 PROGRAM_TO_URL = {
